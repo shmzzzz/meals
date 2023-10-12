@@ -7,6 +7,7 @@ import 'package:meals/screens/categories.dart';
 import 'package:meals/screens/filters.dart';
 import 'package:meals/screens/meals.dart';
 import 'package:meals/widgets/main_drawer.dart';
+import 'package:meals/providers/filter_provider.dart';
 
 const kInitialFilters = {
   Filter.glutenFree: false,
@@ -25,6 +26,15 @@ class TabsScreen extends ConsumerStatefulWidget {
 class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
   Map<Filter, bool> _selectedFilters = kInitialFilters;
+
+  void _showInfoMessage(String message) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
+  }
 
   void _selectPage(int index) {
     setState(() {
@@ -69,6 +79,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     }).toList();
 
     Widget activePage = CategoriesScreen(
+      onToggleFavorite: _toggleMealFavoriteStatus,
       availableMeals: availableMeals,
     );
     var activePageTitle = 'Categories';
@@ -77,6 +88,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       final favoriteMeals = ref.watch(favoriteMealsProvider);
       activePage = MealsScreen(
         meals: favoriteMeals,
+        onToggleFavorite: _toggleMealFavoriteStatus,
       );
       activePageTitle = 'Your Favorite';
     }
