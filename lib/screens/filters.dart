@@ -25,13 +25,13 @@ class FiltersScreen extends ConsumerWidget {
                   .setFilter(Filter.glutenFree, isChecked);
             },
             title: Text(
-              'Lactose-free',
+              'Gluten-free',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
             ),
             subtitle: Text(
-              'Only include Lactose-free meals.',
+              'Only include Gluten-free meals.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -50,13 +50,13 @@ class FiltersScreen extends ConsumerWidget {
                   .setFilter(Filter.lactoseFree, isChecked);
             },
             title: Text(
-              'Gluten-free',
+              'Lactose-free',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
             ),
             subtitle: Text(
-              'Only include Gluten-free meals.',
+              'Only include Lactose-free meals.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
