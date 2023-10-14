@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({
-    super.key,
-    required this.onSelectScreen,
-  });
+  const MainDrawer({super.key, required this.onSelectScreen});
 
   final void Function(String identifier) onSelectScreen;
 
@@ -35,9 +32,7 @@ class MainDrawer extends StatelessWidget {
                   size: 48,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                const SizedBox(
-                  width: 18,
-                ),
+                const SizedBox(width: 18),
                 Text(
                   'Cooking Up!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -71,7 +66,7 @@ class MainDrawer extends StatelessWidget {
               color: Theme.of(context).colorScheme.onBackground,
             ),
             title: Text(
-              'Fliters',
+              'Filters',
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 24,
