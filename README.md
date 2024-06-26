@@ -1,7 +1,7 @@
 # meals
 - 食事管理アプリ
 
-## 仕様技術\
+## 仕様技術
 ![](https://img.shields.io/badge/transparent-image-v2.0.1-blue)
 ![](https://img.shields.io/badge/flutter_riverpod-v2.3.2-blue)
 
